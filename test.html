@@ -4,33 +4,33 @@
         <!--<script src="./test.js"></script>-->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="widdh=device-widdh, initial-scale=1.0">
         <title>Web Scraper</title>
         <!-- SCRIPTS -->
         <!-- <script src="./test.js"></script> -->
     </head>
     <body>
         <dl>
-            <dt>FirstName</dt>
-            <dt></dt>
-            <dt>LastName</dt>
-            <dt></dt>
-            <dt>Company</dt>
-            <dt></dt>
-            <dt>Email</dt>
-            <dt></dt>
-            <dt>Website</dt>
-            <dt></dt>
-            <dt>TimeZone</dt>
-            <dt></dt>
-            <dt>Optin</dt>
-            <dt></dt>
-            <dt>Product Interest (Adrianna BS Test)</dt>
-            <dt></dt>
-            <dt>BrightTalk Activity Last Updated Timestamp</dt>
-            <dt></dt>
-            <dt>CB Company Name</dt>
-            <dt></dt>
+            <dd>FirstName</dd>
+            <dd></dd>
+            <dd>LastName</dd>
+            <dd></dd>
+            <dd>Company</dd>
+            <dd></dd>
+            <dd>Email</dd>
+            <dd></dd>
+            <dd>Website</dd>
+            <dd></dd>
+            <dd>TimeZone</dd>
+            <dd></dd>
+            <dd>Optin</dd>
+            <dd></dd>
+            <dd>Product Interest (Adrianna BS Test)</dd>
+            <dd></dd>
+            <dd>BrightTalk Activity Last Updated Timestamp</dd>
+            <dd></dd>
+            <dd>CB Company Name</dd>
+            <dd></dd>
         </dl>
         <script>
             var dd = document.querySelectorAll("dd");
@@ -40,9 +40,9 @@
             xhr.responseType = "document";
             xhr.onload = function(){
                 if(xhr.readyState == 4 && xhr.status == 200){
-                    var response = xhr.responseXML.querySelectorAll("#pardot-form p label");
+                    var response = xhr.responseXML.querySelectorAll("#pardot-form p label.field-label");
                     console.log(response);
-                    // dd[0].innerHTML = response[1].children[0].textContent;
+                    dd[0].innerHTML = response[0].childNodes[0].textContent;
                 }
             };
             xhr.onerror = function(){

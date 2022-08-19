@@ -11,25 +11,53 @@
     </head>
     <body>
         <dl>
-            <dd>FirstName</dd>
+            <!--0 - 0 0 - Firstname-->
+            <dd></dd> 
             <dd></dd>
-            <dd>LastName</dd>
+            <!-- 2 - 1 0 - lastname-->
             <dd></dd>
-            <dd>Company</dd>
             <dd></dd>
-            <dd>Email</dd>
+            <!-- 4 - 2 0 - Company-->
             <dd></dd>
-            <dd>Website</dd>
             <dd></dd>
-            <dd>TimeZone</dd>
+            <!-- 6 - 3 0 - email-->
             <dd></dd>
-            <dd>Optin</dd>
             <dd></dd>
-            <dd>Product Interest (Adrianna BS Test)</dd>
+            <!-- 8 - 4 0 - website-->
             <dd></dd>
-            <dd>BrightTalk Activity Last Updated Timestamp</dd>
             <dd></dd>
-            <dd>CB Company Name</dd>
+            <!-- 10 - 5 0 - time zone-->
+            <dd></dd>
+            <dd></dd>
+            <!-- 12 - 6 0 - EST-->
+            <dd></dd>
+            <dd></dd>
+            <!-- 14 - 7 0 - CST-->
+            <dd></dd>
+            <dd></dd>
+            <!-- 16 - 8 0 - MST-->
+            <dd></dd>
+            <dd></dd>
+            <!-- 18 - 9 0 - PST-->
+            <dd></dd>
+            <dd></dd>
+            <!-- 20 - 10 0 - Optin-->
+            <dd></dd>
+            <dd></dd>
+            <!-- 22 - 11 0 - true -->
+            <dd></dd>
+            <dd></dd>
+            <!-- 24 - 12 0 - false -->
+            <dd></dd>
+            <dd></dd>
+            <!-- 26 - 13 0 - Product Interest (Adrianna BS Test) -->
+            <dd></dd>
+            <dd></dd>
+            <!-- 28 - 14 0 - BrightTalk Activity Last Updated Timestamp -->
+            <dd></dd>
+            <dd></dd>
+            <!-- 30 - 15 0 - CB Company Name -->
+            <dd></dd>
             <dd></dd>
         </dl>
         <script>
@@ -40,9 +68,28 @@
             xhr.responseType = "document";
             xhr.onload = function(){
                 if(xhr.readyState == 4 && xhr.status == 200){
-                    var response = xhr.responseXML.querySelectorAll("#pardot-form p label.field-label");
-                    console.log(response);
-                    dd[0].innerHTML = response[0].childNodes[0].textContent;
+                    var res = xhr.responseXML.querySelectorAll("#pardot-form p label");
+                    console.log("response: \n", res);
+                    dd[0].innerHTML = res[0].childNodes[0].textContent;
+                    dd[2].innerHTML = res[1].childNodes[0].textContent;
+                    dd[4].innerHTML = res[2].childNodes[0].textContent;
+                    dd[6].innerHTML = res[3].childNodes[0].textContent;
+                    dd[8].innerHTML = res[4].childNodes[0].textContent;
+                    dd[10].innerHTML = res[5].childNodes[0].textContent;
+                    dd[12].innerHTML = res[6].childNodes[0].textContent;
+                    dd[14].innerHTML = res[7].childNodes[0].textContent;
+                    dd[16].innerHTML = res[8].childNodes[0].textContent;
+                    dd[18].innerHTML = res[9].childNodes[0].textContent;
+                    dd[20].innerHTML = res[10].childNodes[0].textContent;
+                    dd[22].innerHTML = res[11].childNodes[0].textContent;
+                    dd[24].innerHTML = res[12].childNodes[0].textContent;
+                    dd[26].innerHTML = res[13].childNodes[0].textContent;
+                    dd[28].innerHTML = res[14].childNodes[0].textContent;
+                    dd[30].innerHTML = res[15].childNodes[0].textContent;
+                    
+                    // dd[1].textContent = res[0].childNodes[0].nextSibling;
+                    // dd[1].innerHTML = responseFieldValue[0].childNodes[1].nodeType;
+                    
                 }
             };
             xhr.onerror = function(){

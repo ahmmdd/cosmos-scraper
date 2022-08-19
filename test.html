@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <!--<script src="./test.js"></script>-->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web Scraper</title>
+        <!-- SCRIPTS -->
+        <!-- <script src="./test.js"></script> -->
+    </head>
+    <body>
+        <dl>
+            <dt>FirstName</dt>
+            <dt></dt>
+            <dt>LastName</dt>
+            <dt></dt>
+            <dt>Company</dt>
+            <dt></dt>
+            <dt>Email</dt>
+            <dt></dt>
+            <dt>Website</dt>
+            <dt></dt>
+            <dt>TimeZone</dt>
+            <dt></dt>
+            <dt>Optin</dt>
+            <dt></dt>
+            <dt>Product Interest (Adrianna BS Test)</dt>
+            <dt></dt>
+            <dt>BrightTalk Activity Last Updated Timestamp</dt>
+            <dt></dt>
+            <dt>CB Company Name</dt>
+            <dt></dt>
+        </dl>
+        <script>
+            var dd = document.querySelectorAll("dd");
+            var xhr = new XMLHttpRequest();
+            // xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://b2bleadgen.demandscience.com/l/811663/2022-08-02/2fty75", true);
+            xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://b2bleadgen.demandscience.com/l/811663/2022-08-02/2fty75", true);
+            xhr.responseType = "document";
+            xhr.onload = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    var response = xhr.responseXML.querySelectorAll("#pardot-form p label");
+                    console.log(response);
+                    // dd[0].innerHTML = response[1].children[0].textContent;
+                }
+            };
+            xhr.onerror = function(){
+                console.log(xhr.status, xhr.statusText);
+            };
+            xhr.send();
+        </script>
+    </body>
+    </html>
